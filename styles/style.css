@@ -7,9 +7,15 @@
 *::after {
   box-sizing: border-box;
 }
+/* 링크 스타일 */
+a {
+  color: #000;
+  text-decoration: none;
+}
 
 /* 본문 스타일 */
 body {
+  color: #181818;
   background: #ccc;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
@@ -42,6 +48,16 @@ body {
 }
 .member {
   background-color: aqua;
+  text-align: right;
+}
+.member li {
+  background-color: pink;
+  display: inline-block;
+}
+.member a {
+  background-color: coral;
+  padding: 6px 10px;
+  display: inherit;
 }
 /* 비주얼 */
 .visual {
