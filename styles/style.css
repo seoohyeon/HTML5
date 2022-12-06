@@ -1,6 +1,19 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 
+/* 숨김 콘텐츠 */
+.a11y-hidden {
+  background-color: red;
+  /* position:absolute를 이용해 화면 밖으러 밀어내는 방법 */
+  position: absolute;
+  /* top: -9999em; */
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
 /* 기본 스타일 */
 *,
 *::before,
@@ -23,7 +36,13 @@ body {
   /* em, rem 단위를 사용해보기 */
   font-size: 1.4rem;
   color: #212121;
-  background: #ccc;
+  background: linear-gradient(
+    to bottom,
+    #ccc 0%,
+    #eee 35%,
+    #fff 70%,
+    #fff 100%
+  );
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
@@ -44,7 +63,6 @@ body {
 .header {
   background: #fff;
   padding: 0 30px;
-  height: 15vh;
   border-radius: 0 0 15px 15px;
   position: relative;
 }
@@ -84,6 +102,32 @@ body {
 
 .divider {
   margin-right: 4px;
+}
+/* 메인 메뉴 */
+.navigation {
+  padding-bottom: 80px;
+}
+.menu {
+  background: #e85e2c
+    linear-gradient(
+      to bottom,
+      #ef9126 0%,
+      #e85e2c 35%,
+      #e85e2c 70%,
+      #ef9126 100%
+    );
+  border-radius: 0 0 5px 5px;
+  display: flow-root;
+  padding-left: 230px;
+}
+.menu-item {
+  background-color: aqua;
+  float: left;
+}
+.sub-menu {
+  background-color: pink;
+  position: absolute;
+  display: none;
 }
 
 /* 비주얼 */
@@ -125,7 +169,8 @@ body {
 }
 /* 푸터 */
 .footer {
-  background: gray;
+  background: #ccc
+    linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
 }
 .footer-inner {
   background: silver;
